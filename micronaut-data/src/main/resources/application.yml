@@ -16,5 +16,16 @@ jpa:
     properties:
       hibernate:
         hbm2ddl:
-          auto: update
+          auto: none
         show_sql: true
+
+flyway:
+  datasources:
+    default:
+      enabled: true
+      validate-on-migrate: true
+
+endpoints:
+  flyway:
+    enabled: true
+    sensitive: false

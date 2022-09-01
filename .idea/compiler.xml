@@ -12,8 +12,12 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micronaut.data/micronaut-data-processor/3.1.0/366b800350c1278c1870847e685d20343b277e24/micronaut-data-processor-3.1.0.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micronaut.data/micronaut-data-model/3.1.0/6f04f207993585aa756c5f1d17ec8732007ea181/micronaut-data-model-3.1.0.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micronaut.data/micronaut-data-tx/3.1.0/75a2fa7e4e9a3c4b35494149f1ef594dad461576/micronaut-data-tx-3.1.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micronaut/micronaut-graal/3.1.1/9f3a3eae374d89d04f710312035684ecc346bd3a/micronaut-graal-3.1.1.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micronaut/micronaut-inject-java/3.1.1/51738c44006c6a14e987fa71b9e3f20e0152ea16/micronaut-inject-java-3.1.1.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micronaut/micronaut-validation/3.1.1/b64594067a208dc9e8ab9897bd69b16db20ad31e/micronaut-validation-3.1.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.12.4/69206e02e6a696034f06a59d3ddbfbba5a4cd81/jackson-databind-2.12.4.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.12.4/752cf9a2562ac2c012e48057e3a4c17dad66c66e/jackson-annotations-2.12.4.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.12.4/6a1bd259b6c4e3f9219ec8ec0be55ed11eed0c/jackson-core-2.12.4.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micronaut/micronaut-aop/3.1.1/c6cdee3f57a511fb5fc4950abcee93cba4f028cc/micronaut-aop-3.1.1.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micronaut/micronaut-core-reactive/3.1.1/776ab28683c96244b3e55bbaf1e0c69f3b275e56/micronaut-core-reactive-3.1.1.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micronaut/micronaut-core/3.1.1/e1f4e044b716a59f823d6c6ae45a3d5e4fb7b050/micronaut-core-3.1.1.jar" />

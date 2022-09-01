@@ -1,7 +1,9 @@
 package com.zipe.service
 
+import com.zipe.entity.Book
 import com.zipe.entity.HomeProduction
 import com.zipe.entity.User
+import com.zipe.repository.BookRepository
 import com.zipe.repository.HomeProductionRepository
 import com.zipe.repository.UserRepository
 import com.zipe.repository.impl.InfoRepositoryImpl
@@ -12,6 +14,7 @@ import javax.transaction.Transactional
 @Singleton
 open class TestService(
     private val userRepository: UserRepository,
+    private val bookRepository: BookRepository,
     private val infoRepositoryImpl: InfoRepositoryImpl,
     private val homeProductionRepository: HomeProductionRepository
 ) {
@@ -47,4 +50,6 @@ open class TestService(
         val tests = homeProductionRepository.findAll()
         println(tests)
     }
+
+    fun findBooks(): List<Book> = bookRepository.findAll().toList()
 }

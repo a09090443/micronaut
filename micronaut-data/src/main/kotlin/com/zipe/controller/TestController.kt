@@ -10,13 +10,16 @@ class TestController(
 ) {
 
     @Get("/HelloWorld")
-    fun test() {
+    fun test():String {
 
+        val bookList = testService.findBooks()
+        println(bookList)
         try {
             testService.test("Hello")
         } catch (e: Exception) {
             e.printStackTrace()
         }
         testService.test2()
+        return "test hello world"
     }
 }
