@@ -40,6 +40,8 @@ dependencies {
     implementation("io.micronaut.sql:micronaut-hibernate-jpa")
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
     implementation("io.micronaut.flyway:micronaut-flyway")
+    implementation("io.micronaut.spring:micronaut-spring")
+    implementation("org.springframework:spring-jdbc")
 
     runtimeOnly("com.h2database:h2")
 

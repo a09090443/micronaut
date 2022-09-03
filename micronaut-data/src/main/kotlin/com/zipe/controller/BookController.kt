@@ -1,16 +1,21 @@
 package com.zipe.controller
 
-import com.zipe.entity.Book
-import com.zipe.repository.BookRepository
-import com.zipe.repository.UserRepository
-import com.zipe.service.TestService
+import com.zipe.service.BookService
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 
 @Controller("/book")
 open class BookController(
-    private val testService: TestService
+    private val bookService: BookService
 ) {
+    @Get("/list/{name}")
+    fun getBooks(name: String) {
+        val books = bookService.findBooksByJpa()
+        val bookJdbc = bookService.findBookByJdbc(name)
+        val bookNamedJdbc = bookService.findBookByNamedJdbc(name)
 
-    fun list():List<Book> = testService.findBooks()
+        println(books)
+        println(bookJdbc)
+        println(bookNamedJdbc)
+    }
 }

@@ -2,21 +2,23 @@ package com.zipe.service
 
 import com.zipe.entity.Book
 import com.zipe.entity.HomeProduction
-import com.zipe.entity.User
 import com.zipe.repository.BookRepository
 import com.zipe.repository.HomeProductionRepository
 import com.zipe.repository.UserRepository
 import com.zipe.repository.impl.InfoRepositoryImpl
 import io.micronaut.transaction.annotation.TransactionalAdvice
 import jakarta.inject.Singleton
-import javax.transaction.Transactional
+import org.springframework.jdbc.core.BeanPropertyRowMapper
+import org.springframework.jdbc.core.JdbcTemplate
+import java.sql.ResultSet
 
 @Singleton
 open class TestService(
     private val userRepository: UserRepository,
     private val bookRepository: BookRepository,
     private val infoRepositoryImpl: InfoRepositoryImpl,
-    private val homeProductionRepository: HomeProductionRepository
+    private val homeProductionRepository: HomeProductionRepository,
+    private val jdbcTemplate: JdbcTemplate
 ) {
     @TransactionalAdvice
     open fun test(content: String) {
@@ -52,4 +54,8 @@ open class TestService(
     }
 
     fun findBooks(): List<Book> = bookRepository.findAll().toList()
+
+    fun findBook(name:String): Book? {
+        return jdbcTemplate.queryForObject("""Select * from Book where name=?""", BeanPropertyRowMapper(Book::class.java), name)
+    }
 }
