@@ -3,7 +3,9 @@ package com.zipe.repository.abstact
 import com.zipe.entity.Book
 import io.micronaut.data.annotation.Repository
 import io.micronaut.data.repository.CrudRepository
+import io.micronaut.transaction.SynchronousTransactionManager
 import io.micronaut.transaction.annotation.TransactionalAdvice
+import java.sql.Connection
 import javax.persistence.EntityManager
 
 @Repository

@@ -3,6 +3,7 @@ package com.zipe.service
 import com.zipe.entity.Book
 import com.zipe.repository.BookRepository
 import com.zipe.repository.abstact.AbstractBookRepository
+import com.zipe.repository.impl.BookRepositoryImpl
 import io.micronaut.transaction.annotation.TransactionalAdvice
 import jakarta.inject.Singleton
 import org.springframework.jdbc.core.BeanPropertyRowMapper
@@ -14,6 +15,7 @@ class BookService(
     private val bookRepository: BookRepository,
     private val namedJdbcTemplate: NamedParameterJdbcTemplate,
     private val abstractBookRepository: AbstractBookRepository,
+    private val bookRepositoryImpl: BookRepositoryImpl,
     private val jdbcTemplate: JdbcTemplate
 ) {
 
@@ -46,4 +48,6 @@ class BookService(
     }
 
     fun insertBookByEntityManager(book: Book) = abstractBookRepository.insert(book)
+
+    fun insertBookByTransactionManager(book: Book) = bookRepositoryImpl.insert(book)
 }

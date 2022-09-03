@@ -29,8 +29,6 @@ open class BookController(
     @Get("/list/sn/{sn}")
     fun getBook(sn: String) {
         val book = bookService.findBookBySn(sn)
-
-        println(book)
     }
 
     @Post("/add", consumes = [MediaType.APPLICATION_JSON])
@@ -41,5 +39,10 @@ open class BookController(
     @Post("/addEntityManager", consumes = [MediaType.APPLICATION_JSON])
     fun addBookByEntityManager(@Body book: Book) {
         bookService.insertBookByEntityManager(book)
+    }
+
+    @Post("/addTransactionManager", consumes = [MediaType.APPLICATION_JSON])
+    fun addBookByTransactionManager(@Body book: Book) {
+        bookService.insertBookByTransactionManager(book)
     }
 }
