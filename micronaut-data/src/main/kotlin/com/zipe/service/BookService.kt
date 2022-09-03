@@ -4,7 +4,6 @@ import com.zipe.entity.Book
 import com.zipe.repository.BookRepository
 import com.zipe.repository.abstact.AbstractBookRepository
 import com.zipe.repository.impl.BookRepositoryImpl
-import io.micronaut.transaction.annotation.TransactionalAdvice
 import jakarta.inject.Singleton
 import org.springframework.jdbc.core.BeanPropertyRowMapper
 import org.springframework.jdbc.core.JdbcTemplate
