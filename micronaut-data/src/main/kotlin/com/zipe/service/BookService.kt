@@ -2,6 +2,8 @@ package com.zipe.service
 
 import com.zipe.entity.Book
 import com.zipe.repository.BookRepository
+import com.zipe.repository.abstact.AbstractBookRepository
+import io.micronaut.transaction.annotation.TransactionalAdvice
 import jakarta.inject.Singleton
 import org.springframework.jdbc.core.BeanPropertyRowMapper
 import org.springframework.jdbc.core.JdbcTemplate
@@ -11,12 +13,17 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 class BookService(
     private val bookRepository: BookRepository,
     private val namedJdbcTemplate: NamedParameterJdbcTemplate,
+    private val abstractBookRepository: AbstractBookRepository,
     private val jdbcTemplate: JdbcTemplate
 ) {
 
-    fun findBooksByJpa(): List<Book>? {
+    fun findBooksByJpa(): List<Book> {
         return bookRepository.findAll().toList()
     }
+
+    fun findBookByName(name: String) = bookRepository.findByName(name)
+
+    fun findBookBySn(sn: String) = abstractBookRepository.findBySn(sn)
 
     fun findBookByJdbc(name: String): Book? {
         return jdbcTemplate.queryForObject(
@@ -33,4 +40,10 @@ class BookService(
             BeanPropertyRowMapper(Book::class.java)
         )
     }
+
+    fun insertBook(book: Book) {
+        bookRepository.save(book)
+    }
+
+    fun insertBookByEntityManager(book: Book) = abstractBookRepository.insert(book)
 }

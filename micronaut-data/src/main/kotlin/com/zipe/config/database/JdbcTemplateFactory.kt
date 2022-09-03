@@ -2,7 +2,6 @@ package com.zipe.config.database
 
 import io.micronaut.context.annotation.Bean
 import io.micronaut.context.annotation.Factory
-import jakarta.inject.Inject
 import jakarta.inject.Singleton
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
